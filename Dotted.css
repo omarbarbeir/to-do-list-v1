@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Barriecito&display=swap');
+
+body{
+    height: 100vh;
+    overflow-x: hidden;
+    background: #c4d8c0;
+}
+body::-webkit-scrollbar{
+    width:8px;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar-track{
+    background: silver;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar-thumb{
+    background: gray;
+    border-radius: 10px;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar-thumb:hover{
+    background: white;
+    overflow-x: hidden;
+}
+#todoApp{
+    display: flex;
+    margin:20px auto;
+    padding:5px 3px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background: transparent;
+    box-shadow: 0 0 3px white;
+}
+#todoApp h1{
+    position: absolute;
+    top:5px;
+    left:20px;
+    font-size: 25px;
+    font-family: 'Acme', sans-serif;
+    text-shadow: 0 0 2px whitesmoke;
+}
+#adding input{
+    background: silver;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+}
+#adding input::placeholder{
+    color:white
+}
+#addbtn{
+    font-family: 'Acme', sans-serif;
+    text-align: center;
+    font-size: 18px;
+}
+#addbtn:focus{
+    outline: none;
+    border: none;
+}
+#tasklist{
+    display: flex;
+    margin: 0px auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:5px;
+    position: relative;
+    background: transparent;
+    box-shadow: 0 0 2px white;
+    border-radius: 5px;
+}
+#tasklist  li{
+    list-style: none;
+    align-self: start;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.1);
+    padding: 3px;
+    width:95%
+}
+#tasklist  li::before{
+    content: "";
+    width:15px;
+    height: 15px;
+    position: absolute;
+    border-radius: 50%;
+    border:1px solid brown;
+    background: transparent;
+    background-size: cover;
+    background-position: center;
+    left:5px;
+    cursor: pointer;
+}
+#tasklist li.selected{
+    text-decoration-line:line-through ;
+    text-decoration-color: white;
+    text-decoration-thickness:2px;
+}
+#tasklist li.selected::before{
+    background-image: url(./correct2.png);
+}
+#tasklist li span{
+    position: absolute;
+    right: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color:red;
+    cursor: pointer;
+}
